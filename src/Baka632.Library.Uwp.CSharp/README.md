@@ -1,7 +1,4 @@
-<p align="center">
 <img src="../../icon.png" width="100px"/>
-</p>
-
 
 # Baka632.Library.Uwp.CSharp
 
