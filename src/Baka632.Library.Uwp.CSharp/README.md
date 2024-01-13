@@ -1,12 +1,12 @@
-<img src="../../icon.png" width="100px"/>
+![Baka632.Library.Uwp.CSharp](../../icon.png)
 
 # Baka632.Library.Uwp.CSharp
 
-Îª»ùÓÚ C# µÄ UWP Ó¦ÓÃ¶øÉè¼ÆµÄÀà¿â¡£
+ä¸ºåŸºäºŽ C# çš„ UWP åº”ç”¨è€Œè®¾è®¡çš„ç±»åº“ã€‚
 
-MIT Ðí¿ÉÖ¤¡£
+MIT è®¸å¯è¯ã€‚
 
-## ³£ÓÃÀàÐÍ
+## å¸¸ç”¨ç±»åž‹
 
 - XamlHelper
 - ReswHelper
