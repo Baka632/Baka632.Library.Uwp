@@ -11,3 +11,7 @@ MIT 许可证。
 - XamlHelper
 - ReswHelper
 - EnvironmentHelper
+
+## 支持版本
+
+包版本限制为 Windows 10 Build 16299，但实际支持到 15063。
