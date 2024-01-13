@@ -7,7 +7,7 @@ using Windows.UI;
 using Uri = System.Uri;
 using Color = Windows.UI.Color;
 
-namespace Baka632.Library.Uwp.CSharp;
+namespace Baka632.Library.Uwp.CSharp.Helpers;
 
 /// <summary>
 /// 为获取图像主题色提供帮助方法的类

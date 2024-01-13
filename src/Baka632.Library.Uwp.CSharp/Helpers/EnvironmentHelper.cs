@@ -1,6 +1,6 @@
 ﻿using Windows.System.Profile;
 
-namespace Baka632.Library.Uwp.CSharp;
+namespace Baka632.Library.Uwp.CSharp.Helpers;
 
 /// <summary>
 /// 为确定当前设备环境提供帮助方法的类

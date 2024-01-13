@@ -1,4 +1,4 @@
-﻿namespace Baka632.Library.Uwp.CSharp;
+﻿namespace Baka632.Library.Uwp.CSharp.Helpers;
 
 /// <summary>
 /// 为本地化提供帮助方法的类

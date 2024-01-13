@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Baka632.Library.Uwp.CSharp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Baka632")]
 [assembly: AssemblyProduct("Baka632.Library.Uwp.CSharp")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
+[assembly: AssemblyCopyright("Copyright © Baka632")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

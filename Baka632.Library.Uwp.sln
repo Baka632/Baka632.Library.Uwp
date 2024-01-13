@@ -8,7 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{D331340A-42C8-45F8-A11C-A08F1ED0B3A5}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		icon.png = icon.png
 		LICENSE.txt = LICENSE.txt
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

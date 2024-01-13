@@ -1,9 +1,9 @@
-﻿namespace Baka632.Library.Uwp.CSharp;
+﻿namespace Baka632.Library.Uwp.CSharp.Helpers;
 
 /// <summary>
 /// 为应用程序数据提供内存中缓存的类
 /// </summary>
-internal sealed class MemoryCacheHelper<T>
+public sealed class MemoryCacheHelper<T>
 {
     private readonly Dictionary<string, T> _cache = new(200);
 

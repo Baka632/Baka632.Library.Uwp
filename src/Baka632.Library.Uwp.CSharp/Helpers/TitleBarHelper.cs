@@ -3,7 +3,7 @@ using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI;
 
-namespace Baka632.Library.Uwp.CSharp;
+namespace Baka632.Library.Uwp.CSharp.Helpers;
 
 /// <summary>
 /// 为标题栏相关操作提供帮助的类

@@ -1,6 +1,6 @@
 ﻿using Windows.Foundation.Metadata;
 
-namespace Baka632.Library.Uwp.CSharp;
+namespace Baka632.Library.Uwp.CSharp.Helpers;
 
 /// <summary>
 /// 帮助设置亚克力背景的类

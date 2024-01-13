@@ -1,6 +1,6 @@
 ﻿using Windows.UI.Core;
 
-namespace Baka632.Library.Uwp.CSharp;
+namespace Baka632.Library.Uwp.CSharp.Helpers;
 
 /// <summary>
 /// 为应用程序访问 UI 线程提供方法的类

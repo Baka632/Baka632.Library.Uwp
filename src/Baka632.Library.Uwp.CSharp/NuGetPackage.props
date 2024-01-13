@@ -8,9 +8,16 @@
       <Copyright>Copyright (c) Baka632</Copyright>
       <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
       <PackageLicenseExpression>MIT</PackageLicenseExpression>
-      <PackageProjectUrl>https://github.com/Baka632</PackageProjectUrl>
+      <PackageProjectUrl>https://github.com/Baka632/Baka632.Library.Uwp</PackageProjectUrl>
       <PackageTags>uwp</PackageTags>
-      <PackageIcon>../../icon.png</PackageIcon>
+      <PackageIcon>icon.png</PackageIcon>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
+      <PackageOutputPath>bin</PackageOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\icon.png" PackagePath="\" Pack="True"/>
+    <None Include="README.md" PackagePath="\" Pack="True"/>
+  </ItemGroup>
 
 </Project>

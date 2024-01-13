@@ -1,7 +1,7 @@
 ﻿using Windows.UI.Core;
 using Windows.UI.Xaml.Media.Animation;
 
-namespace Baka632.Library.Uwp.CSharp;
+namespace Baka632.Library.Uwp.CSharp.Helpers;
 
 /// <summary>
 /// 为导航操作提供帮助方法的类

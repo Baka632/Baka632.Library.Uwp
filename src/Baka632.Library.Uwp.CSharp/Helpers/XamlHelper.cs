@@ -1,7 +1,7 @@
 ﻿// Fix CS0419
 using Color = Windows.UI.Color;
 
-namespace Baka632.Library.Uwp.CSharp;
+namespace Baka632.Library.Uwp.CSharp.Helpers;
 
 /// <summary>
 /// 为在 Xaml 中进行数值转换等操作提供方法的类
