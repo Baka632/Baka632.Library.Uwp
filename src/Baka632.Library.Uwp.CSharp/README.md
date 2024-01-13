@@ -8,28 +8,24 @@ MIT 许可证。
 
 ## 常用类型
 
-- XamlHelper
-为函数绑定提供的工具类。
+- XamlHelper：为函数绑定提供的工具类。
 ```xml
 xmlns:helpers="using:Baka632.Library.Uwp.CSharp.Helpers"
 
 <Button Visibility="{x:Bind helpers:XamlHelper.ReverseVisibility(ViewModel.IsLoading), Mode=OneWay}">
 ```
-- LocalizationHelper
-为应用本地化提供的工具类。
+- LocalizationHelper：为应用本地化提供的工具类。
 ```csharp
 public string AppDisplayName => "AppDisplayName".GetLocalized();
 ```
-- EnvironmentHelper
-为应用程序运行环境提供的工具类。
+- EnvironmentHelper：为应用程序运行环境提供的工具类。
 ```csharp
 if (EnvironmentHelper.IsWindowsMobile)
 {
     IsShowTitlebar = false;
 }
 ```
-- AcrylicHelper & MicaHelper
-为亚克力背景和云母背景提供的工具类。
+- AcrylicHelper & MicaHelper：为亚克力背景和云母背景提供的工具类。
 ```csharp
 if (MicaHelper.IsSupported())
 {
