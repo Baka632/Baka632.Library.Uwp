@@ -11,7 +11,8 @@ MIT 许可证。
 - XamlHelper
 为函数绑定提供的工具类。
 ```xml
-<!-- xmlns:helpers="using:Baka632.Library.Uwp.CSharp.Helpers" -->
+xmlns:helpers="using:Baka632.Library.Uwp.CSharp.Helpers"
+
 <Button Visibility="{x:Bind helpers:XamlHelper.ReverseVisibility(ViewModel.IsLoading), Mode=OneWay}">
 ```
 - LocalizationHelper
