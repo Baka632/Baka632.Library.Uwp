@@ -1,0 +1,9 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+      <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+      <TargetPlatformVersion>10.0.22000.0</TargetPlatformVersion>
+      <TargetPlatformMinVersion>10.0.15138.0</TargetPlatformMinVersion>
+  </PropertyGroup>
+
+</Project>

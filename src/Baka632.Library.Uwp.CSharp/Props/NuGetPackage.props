@@ -1,8 +1,14 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-      <PackageReleaseNotes>Initial release</PackageReleaseNotes>
-      <Version>1.0.0</Version>
+      <PackageVersion>1.0.1</PackageVersion>
+      <PackageReleaseNotes>
+          [EnvironmentHelper]
+          1. Add method "IsSystemBuildVersionEqualOrGreaterThan"
+          [XamlHelper]
+          1. Renamed method "DateTimeOffsetToFormatedString" to "ToFormatedString" and it will require a new argument "format" now
+          2. Add method "IsStringNullOrEmpty", "IsStringNotNullOrEmpty", "IsStringNullOrEmptyToVisibility" and "IsStringNullOrEmptyReverseVisibility"
+      </PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -18,8 +24,7 @@
       <PackageReadmeFile>README.md</PackageReadmeFile>
       <PackageOutputPath>bin</PackageOutputPath>
       <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
-      <PublishRepositoryUrl>true</PublishRepositoryUrl>
-      <EmbedUntrackedSources>true</EmbedUntrackedSources>
+      <PublishRepositoryUrl>True</PublishRepositoryUrl>
       <IncludeSymbols>true</IncludeSymbols>
       <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>

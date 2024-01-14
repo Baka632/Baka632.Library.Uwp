@@ -88,13 +88,15 @@ public static class XamlHelper
     }
 
     /// <summary>
-    /// 将 <see cref="DateTimeOffset"/> 转换为中文日期字符串
+    /// 按照格式，将 <see cref="DateTimeOffset"/> 转换为字符串
     /// </summary>
     /// <param name="value">要转换的 <see cref="DateTimeOffset"/> 实例</param>
-    /// <returns>采用"yyyy年M月d日"格式的中文日期字符串</returns>
-    public static string DateTimeOffsetToFormatedString(DateTimeOffset value)
+    /// <param name="format">字符串的格式</param>
+    /// <exception cref="FormatException">当格式不正确时抛出</exception>
+    /// <returns>格式化的日期字符串</returns>
+    public static string ToFormatedString(DateTimeOffset value, string format)
     {
-        return value.ToString("yyyy年M月d日");
+        return value.ToString(format);
     }
 
     /// <summary>
@@ -129,6 +131,40 @@ public static class XamlHelper
     public static Visibility IsNullReverseVisibility(object value)
     {
         return ReverseVisibility(IsNull(value));
+    }
+
+    /// <summary>
+    /// 确定字符串是否为 <see langword="null"/> 或空字符串
+    /// </summary>
+    /// <param name="value">要检查的字符串</param>
+    /// <returns>确定字符串是否为 <see langword="null"/> 或空字符串的值</returns>
+    public static bool IsStringNullOrEmpty(string value) => string.IsNullOrEmpty(value);
+
+    /// <summary>
+    /// 确定字符串是否不为 <see langword="null"/> 或空字符串
+    /// </summary>
+    /// <param name="value">要检查的字符串</param>
+    /// <returns>确定字符串是否不为 <see langword="null"/> 或空字符串的值</returns>
+    public static bool IsStringNotNullOrEmpty(string value) => IsStringNullOrEmpty(value) != true;
+
+    /// <summary>
+    /// 确定字符串是否为 <see langword="null"/> 或空字符串，并将其表示为 <see cref="Visibility"/>
+    /// </summary>
+    /// <param name="value">要检查的字符串</param>
+    /// <returns>由对象是否为字符串是否为 <see langword="null"/> 或空字符串的值而转换得到的 <see cref="Visibility"/></returns>
+    public static Visibility IsStringNullOrEmptyToVisibility(string value)
+    {
+        return ToVisibility(IsStringNullOrEmpty(value));
+    }
+
+    /// <summary>
+    /// 确定字符串是否为 <see langword="null"/> 或空字符串，并将得到的 <see cref="Visibility"/> 反转
+    /// </summary>
+    /// <param name="value">要检查的字符串</param>
+    /// <returns>完成反转操作的 <see cref="Visibility"/></returns>
+    public static Visibility IsStringNullOrEmptyReverseVisibility(string value)
+    {
+        return ReverseVisibility(IsStringNullOrEmpty(value));
     }
 
     /// <summary>
