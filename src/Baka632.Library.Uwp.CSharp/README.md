@@ -2,6 +2,8 @@
 
 # Baka632.Library.Uwp.CSharp
 
+[![NuGet](https://img.shields.io/nuget/v/Baka632.Library.Uwp.CSharp)](https://www.nuget.org/packages/Baka632.Library.Uwp.CSharp) [![NuGet](https://img.shields.io/nuget/dt/Baka632.Library.Uwp.CSharp)](https://www.nuget.org/packages/Baka632.Library.Uwp.CSharp)
+
 为基于 C# 的 UWP 应用而设计的类库。
 
 MIT 许可证。
