@@ -64,6 +64,7 @@
     <Compile Include="Helpers\MicaHelper.cs" />
     <Compile Include="Helpers\NavigationHelper.cs" />
     <Compile Include="Helpers\ReswHelper.cs" />
+    <Compile Include="Helpers\SettingsHelper.cs" />
     <Compile Include="Helpers\TitleBarHelper.cs" />
     <Compile Include="Helpers\UIThreadHelper.cs" />
     <Compile Include="Helpers\XamlHelper.cs" />

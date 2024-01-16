@@ -8,6 +8,9 @@ namespace Baka632.Library.Uwp.CSharp.Helpers;
 /// </summary>
 public class NavigationHelper
 {
+    private readonly static SystemNavigationManager navigationManager = SystemNavigationManager.GetForCurrentView();
+    private readonly Frame currentFrame;
+
     /// <summary>
     /// 当向后导航完成时引发
     /// </summary>
@@ -21,8 +24,6 @@ public class NavigationHelper
     /// </summary>
     public event EventHandler NavigationComplete;
 
-    private readonly Frame currentFrame;
-
     /// <summary>
     /// 指示是否能向后导航的值
     /// </summary>
@@ -32,10 +33,24 @@ public class NavigationHelper
     /// 使用指定的参数构造 <see cref="NavigationHelper"/> 的新实例
     /// </summary>
     /// <param name="frame">要进行导航操作的 <see cref="Frame"/></param>
+    /// <param name="reactToBackRequested">指示是否响应系统后退请求的值</param>
     /// <exception cref="ArgumentNullException"><paramref name="frame"/> 为 <see langword="null"/></exception>
-    public NavigationHelper(Frame frame)
+    public NavigationHelper(Frame frame, bool reactToBackRequested = false)
     {
         currentFrame = frame ?? throw new ArgumentNullException(nameof(frame));
+
+        if (reactToBackRequested)
+        {
+            navigationManager.BackRequested += OnBackRequested;
+        }
+    }
+
+    /// <summary>
+    /// 销毁此对象时调用的方法
+    /// </summary>
+    ~NavigationHelper()
+    {
+        navigationManager.BackRequested -= OnBackRequested;
     }
 
     /// <summary>
@@ -84,7 +99,19 @@ public class NavigationHelper
     /// <param name="transitionInfo">要在导航时应用的切换效果</param>
     public void Navigate(Type sourcePageType, object parameter = null, NavigationTransitionInfo transitionInfo = null)
     {
-        currentFrame.Navigate(sourcePageType, parameter, transitionInfo);
+        if (transitionInfo is not null)
+        {
+            currentFrame.Navigate(sourcePageType, parameter, transitionInfo);
+        }
+        else
+        {
+            currentFrame.Navigate(sourcePageType, parameter);
+        }
         NavigationComplete?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void OnBackRequested(object sender, BackRequestedEventArgs e)
+    {
+        GoBack(e);
     }
 }

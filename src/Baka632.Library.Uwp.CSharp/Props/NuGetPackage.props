@@ -1,13 +1,13 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-      <PackageVersion>1.0.1</PackageVersion>
+      <PackageVersion>1.0.2</PackageVersion>
       <PackageReleaseNotes>
-          [EnvironmentHelper]
-          1. Add method "IsSystemBuildVersionEqualOrGreaterThan"
-          [XamlHelper]
-          1. Renamed method "DateTimeOffsetToFormatedString" to "ToFormatedString" and it will require a new argument "format" now
-          2. Add method "IsStringNullOrEmpty", "IsStringNotNullOrEmpty", "IsStringNullOrEmptyToVisibility" and "IsStringNullOrEmptyReverseVisibility"
+[SettingsHelper]
+    1. 添加新类“SettingsHelper”，其用于读取和存储设置。
+[NavigationHelper]
+    1. 添加是否响应系统后退请求的配置。
+    2. 调用 Navigate 方法时，若 transitionInfo 参数为空，则将调用 Frame.Navigate 的另一个重载。
       </PackageReleaseNotes>
   </PropertyGroup>
 
