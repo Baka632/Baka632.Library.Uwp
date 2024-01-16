@@ -6,9 +6,9 @@ namespace Baka632.Library.Uwp.CSharp.Helpers;
 /// <summary>
 /// 为导航操作提供帮助方法的类
 /// </summary>
-public class NavigationHelper
+public sealed class NavigationHelper
 {
-    private readonly static SystemNavigationManager navigationManager = SystemNavigationManager.GetForCurrentView();
+    private readonly static SystemNavigationManager navigationManager = TitleBarHelper.NavigationManager;
     private readonly Frame currentFrame;
 
     /// <summary>
