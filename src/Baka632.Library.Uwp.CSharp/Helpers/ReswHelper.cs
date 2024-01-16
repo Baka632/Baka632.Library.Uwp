@@ -5,7 +5,7 @@ namespace Baka632.Library.Uwp.CSharp.Helpers;
 /// <summary>
 /// 为 RESW 文件中的资源提供访问的类
 /// </summary>
-public class ReswHelper
+public static class ReswHelper
 {
     /// <summary>
     /// 从 RESW 文件中获取字符串
