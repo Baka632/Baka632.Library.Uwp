@@ -41,7 +41,7 @@ else if (AcrylicHelper.IsSupported())
 
 ## 支持版本
 
-包版本限制为 Windows 10 Build 16299，但实际支持到 15063。
+包的最低支持版本限制为 Windows 10 Build 16299，但实际支持到 15063。
 
 可以通过将项目最低版本设置为 16299 而将 ```Package.appxmanifest``` 中的 ```TargetDeviceFamily``` 设置为 15063 来支持较低版本的系统。
 

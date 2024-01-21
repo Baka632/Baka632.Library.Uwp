@@ -2,6 +2,7 @@
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI;
+using Microsoft.Toolkit.Uwp.UI.Helpers;
 
 namespace Baka632.Library.Uwp.CSharp.Helpers;
 
@@ -11,6 +12,7 @@ namespace Baka632.Library.Uwp.CSharp.Helpers;
 public static class TitleBarHelper
 {
     private static Frame currentFrame;
+    private static readonly ThemeListener themeListener = new();
 
     /// <summary>
     /// 当系统默认的后退按钮可视性发生改变时引发
@@ -32,19 +34,20 @@ public static class TitleBarHelper
     {
         if (EnvironmentHelper.IsWindowsMobile != true)
         {
+            themeListener.ThemeChanged += OnThemeChanged;
+
             CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
             coreTitleBar.ExtendViewIntoTitleBar = true;
             coreTitleBar.IsVisibleChanged += OnTitleBarVisibilityChanged;
 
             ApplicationViewTitleBar presentationTitleBar = ApplicationView.GetForCurrentView().TitleBar;
             presentationTitleBar.ButtonBackgroundColor = Colors.Transparent;
-            Color ForegroundColor = Application.Current.RequestedTheme switch
+            Color foregroundColor = themeListener.CurrentTheme switch
             {
                 ApplicationTheme.Light => Colors.Black,
-                ApplicationTheme.Dark => Colors.White,
-                _ => Colors.White,
+                _ => Colors.White
             };
-            presentationTitleBar.ButtonForegroundColor = ForegroundColor;
+            presentationTitleBar.ButtonForegroundColor = foregroundColor;
         }
     }
 
@@ -92,6 +95,17 @@ public static class TitleBarHelper
     private static AppViewBackButtonVisibility AppViewBackButtonVisibilityToBoolean(bool canGoBack)
     {
         return canGoBack ? AppViewBackButtonVisibility.Visible : AppViewBackButtonVisibility.Collapsed;
+    }
+
+    private static void OnThemeChanged(ThemeListener sender)
+    {
+        ApplicationViewTitleBar presentationTitleBar = ApplicationView.GetForCurrentView().TitleBar;
+
+        presentationTitleBar.ButtonForegroundColor = themeListener.CurrentTheme switch
+        {
+            ApplicationTheme.Light => Colors.Black,
+            _ => Colors.White
+        };
     }
 }
 
