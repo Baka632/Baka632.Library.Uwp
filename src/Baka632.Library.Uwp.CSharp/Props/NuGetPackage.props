@@ -1,10 +1,10 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-      <PackageVersion>1.0.3</PackageVersion>
+      <PackageVersion>1.0.4</PackageVersion>
       <PackageReleaseNotes>
-[TitleBarHelper]
-    1. 现在会根据主题变化来更改标题栏按钮的前景色了
+[UIThreadHelper]
+    1. 为 RunOnUIThread 添加一个能返回值的重载方法
       </PackageReleaseNotes>
   </PropertyGroup>
 

@@ -33,4 +33,68 @@ public static class UIThreadHelper
 
         await _dispatcher.RunAsync(CoreDispatcherPriority.Normal, dispatchedHandler);
     }
+
+    /// <summary>
+    /// 使用正常优先级在 UI 线程上调用指定的方法，并返回一个值
+    /// </summary>
+    /// <typeparam name="T">指定方法的返回值</typeparam>
+    /// <param name="func">要执行的有返回值方法</param>
+    /// <returns>指定方法的返回值</returns>
+    /// <exception cref="InvalidOperationException">未调用 <see cref="Initialize(CoreDispatcher)"/> 方法</exception>
+    public static async Task<T> RunOnUIThread<T>(Func<T> func)
+    {
+        if (_dispatcher == null)
+        {
+            throw new InvalidOperationException($"请先调用 {nameof(Initialize)} 方法");
+        }
+
+        TaskCompletionSource<T> source = new();
+
+        await _dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+        {
+            try
+            {
+                T result = func();
+                source.TrySetResult(result);
+            }
+            catch (Exception e)
+            {
+                source.TrySetException(e);
+            }
+        });
+
+        return await source.Task;
+    }
+
+    /// <summary>
+    /// 使用正常优先级在 UI 线程上调用指定的方法，并返回一个值
+    /// </summary>
+    /// <typeparam name="T">指定方法的返回值</typeparam>
+    /// <param name="func">要执行的有返回值方法</param>
+    /// <returns>指定方法的返回值</returns>
+    /// <exception cref="InvalidOperationException">未调用 <see cref="Initialize(CoreDispatcher)"/> 方法</exception>
+    public static async Task<T> RunOnUIThread<T>(Func<Task<T>> func)
+    {
+        if (_dispatcher == null)
+        {
+            throw new InvalidOperationException($"请先调用 {nameof(Initialize)} 方法");
+        }
+
+        TaskCompletionSource<T> source = new();
+
+        await _dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+        {
+            try
+            {
+                T result = await func();
+                source.TrySetResult(result);
+            }
+            catch (Exception e)
+            {
+                source.TrySetException(e);
+            }
+        });
+
+        return await source.Task;
+    }
 }
