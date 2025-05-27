@@ -1,10 +1,11 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-      <PackageVersion>1.0.4</PackageVersion>
+      <PackageVersion>1.0.5</PackageVersion>
       <PackageReleaseNotes>
-[UIThreadHelper]
-    1. 为 RunOnUIThread 添加一个能返回值的重载方法
+[其他]
+    1. 更新目标版本
+    2. 升级项目依赖
       </PackageReleaseNotes>
   </PropertyGroup>
 
