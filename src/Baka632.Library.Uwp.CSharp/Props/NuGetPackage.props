@@ -1,11 +1,11 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-      <PackageVersion>1.0.5</PackageVersion>
+      <PackageVersion>1.5.1</PackageVersion>
       <PackageReleaseNotes>
 [其他]
-    1. 更新目标版本
-    2. 升级项目依赖
+    1. 调整为 Any CPU 架构
+    2. 更改包版本号规则
       </PackageReleaseNotes>
   </PropertyGroup>
 

@@ -15,4 +15,4 @@
 ## 关于打包
 
 对于大多数项目，请使用以下命令进行打包：
-```msbuild -t:pack -p:Configuration=Release```
+```msbuild -t:pack -p:Configuration=Release -p:Platform="Any CPU"```
